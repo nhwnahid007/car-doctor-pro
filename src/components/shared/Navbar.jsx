@@ -1,5 +1,7 @@
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React from 'react';
 import { AiOutlineShopping } from 'react-icons/ai';
 import { CiSearch } from 'react-icons/ci';
@@ -12,6 +14,8 @@ const Navbar = () => {
     { name: 'Blog', href: '/blog' },
     { name: 'Contact', href: '/contact' },
   ];
+  const pathname = usePathname();
+  console.log(pathname);
   return (
     <div>
       <div className="navbar container mx-auto">
@@ -40,7 +44,12 @@ const Navbar = () => {
             >
               {links.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href}>{link.name}</a>
+                  <Link
+                    className={pathname === link.href ? ' text-primary' : ''}
+                    href={link.href}
+                  >
+                    {link.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -53,15 +62,22 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">
             {links.map((link) => (
               <li key={link.name}>
-                <a href={link.href}>{link.name}</a>
+                <Link
+                  href={link.href}
+                  className={pathname === link.href ? ' text-primary' : ''}
+                >
+                  {link.name}
+                </Link>
               </li>
             ))}
           </ul>
         </div>
-        <div className="navbar-end flex items-center justify-center gap-2">
+        <div className="navbar-end flex items-center  gap-2">
           <AiOutlineShopping className="text-2xl" />
           <CiSearch className="text-2xl mr-5" />
-          <a className="btn text-primary outline-primary outline-2 bg-transparent ">Appoinment</a>
+          <a className="btn text-primary outline-primary outline-1 bg-transparent hover:bg-primary hover:text-white">
+            Appoinment
+          </a>
         </div>
       </div>
     </div>
