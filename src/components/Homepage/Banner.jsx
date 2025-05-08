@@ -8,7 +8,8 @@ const Banner = () => {
     {
       id: 1,
       title: 'Affordable Price',
-      description: 'There are many varieties of products available at the best prices',
+      description:
+        'There are many varieties of products available at the best prices',
       image: '/assets/images/banner/1.jpg',
     },
     {
@@ -57,11 +58,15 @@ const Banner = () => {
             {/* Text content */}
             <div className="relative z-10 h-full flex items-center pl-6 md:pl-12 lg:pl-36 w-full">
               <div className="max-w-xl space-y-5">
-                <h1 className="text-4xl md:text-5xl font-bold">{slide.title}</h1>
+                <h1 className="text-4xl md:text-5xl font-bold">
+                  {slide.title}
+                </h1>
                 <p className="text-base md:text-lg">{slide.description}</p>
                 <div className="flex gap-4">
                   <button className="btn btn-primary">Discover More</button>
-                  <button className="btn btn-outline text-white">Latest Project</button>
+                  <button className="btn btn-outline text-white">
+                    Latest Project
+                  </button>
                 </div>
               </div>
             </div>
