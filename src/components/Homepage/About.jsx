@@ -5,12 +5,12 @@ const About = () => {
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col lg:flex-row">
         <div className="lg:w-1/2 relative">
-          <Image 
-            src="/assets/images/about_us/person.jpg" 
-            alt="Person" 
-            width={500} 
+          <Image
+            src="/assets/images/about_us/person.jpg"
+            alt="Person"
+            width={500}
             height={350}
-            className="w-3/4 rounded-lg shadow-2xl" 
+            className="w-3/4 rounded-lg shadow-2xl"
           />
           <Image
             src="/assets/images/about_us/parts.jpg"
@@ -21,7 +21,9 @@ const About = () => {
           />
         </div>
         <div className="lg:w-1/2 space-y-5 p-4">
-          <h3 className="text-3xl text-center text-orange-500 font-bold">About Us</h3>
+          <h3 className="text-3xl text-center text-orange-500 font-bold">
+            About Us
+          </h3>
           <h1 className="text-5xl font-bold">
             We are qualified & of experience in this field
           </h1>
