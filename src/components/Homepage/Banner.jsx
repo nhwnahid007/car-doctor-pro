@@ -65,7 +65,7 @@ const Banner = () => {
               <p>{slide.description}</p>
               <div>
                 <button className="btn btn-primary mr-5">Discover More</button>
-                <button className="btn btn-outline btn-secondary">
+                <button className="btn btn-outline bg-transparent hover:bg-primary hover:text-white ">
                   Latest Project
                 </button>
               </div>

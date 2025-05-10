@@ -37,7 +37,7 @@ const About = () => {
             humour, or randomised words which do not look even slightly
             believable.{' '}
           </p>
-          <button className="btn btn-warning">Get More Info</button>
+          <button className="btn ">Get More Info</button>
         </div>
       </div>
     </div>
