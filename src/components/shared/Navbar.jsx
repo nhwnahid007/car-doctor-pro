@@ -75,9 +75,9 @@ const Navbar = () => {
         <div className="navbar-end flex items-center  gap-2">
           <AiOutlineShopping className="text-2xl" />
           <CiSearch className="text-2xl mr-5" />
-          <a className="btn text-primary outline-primary outline-1 bg-transparent hover:bg-primary hover:text-white">
+          <button className="btn text-primary outline-primary outline-1 bg-transparent hover:bg-primary hover:text-white">
             Appoinment
-          </a>
+          </button>
         </div>
       </div>
     </div>
