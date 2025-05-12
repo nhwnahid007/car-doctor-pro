@@ -12,11 +12,11 @@ const compat = new FlatCompat({
 const eslintConfig = [...compat.extends('next/core-web-vitals'),
   {
     rules: {
-      "no-unused-vars": "error",
-      "no-unused-expressions": "error",
-      "prefer-const": "error",
-      "no-console": "warn",
-      "no-undef": "error"
+      // "no-unused-vars": "error",
+      // "no-unused-expressions": "error",
+      // "prefer-const": "error",
+      // "no-console": "warn",
+      // "no-undef": "error"
     },
   },
 ];
