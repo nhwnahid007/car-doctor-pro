@@ -78,6 +78,9 @@ const Navbar = () => {
           <button className="btn text-primary outline-primary outline-1 bg-transparent hover:bg-primary hover:text-white">
             Appoinment
           </button>
+          <button className="btn btn-primary text-white">
+            <Link href="/login">Login</Link>
+          </button>
         </div>
       </div>
     </div>

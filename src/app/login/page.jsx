@@ -2,9 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
-
 const loginPage = () => {
-
   return (
     <div className="container px-24 mx-auto py-24">
       <div className="grid grid-cols-2 gap-12 items-center">
@@ -20,7 +18,7 @@ const loginPage = () => {
           <h6 className="text-3xl font-semibold text-primary text-center mb-12">
             Sign In
           </h6>
-          <form  action="">
+          <form action="">
             <label htmlFor="email">Email</label> <br />
             <input
               type="text"

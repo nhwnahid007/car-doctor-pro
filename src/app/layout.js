@@ -25,16 +25,16 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
         suppressHydrationWarning
-        >
+      >
         <AuthProvider>
-        <div className="container mx-auto px-5 lg:px-20">
-          <Navbar />
-        </div>
-        <main className="flex-grow">
-          <div className="container mx-auto px-5 lg:px-20">{children}</div>
-        </main>
-        <Footer />
-      </AuthProvider>
+          <div className="container mx-auto px-5 lg:px-20">
+            <Navbar />
+          </div>
+          <main className="flex-grow">
+            <div className="container mx-auto px-5 lg:px-20">{children}</div>
+          </main>
+          <Footer />
+        </AuthProvider>
       </body>
     </html>
   );
