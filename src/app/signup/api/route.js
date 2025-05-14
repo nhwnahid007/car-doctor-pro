@@ -1,7 +1,6 @@
 import { NextResponse } from 'next/server';
 import { connectDb } from '../../../lib/connectDb';
-import bcrypt from "bcrypt";
-
+import bcrypt from 'bcrypt';
 
 export const POST = async (request) => {
   const newUser = await request.json();
@@ -20,7 +19,7 @@ export const POST = async (request) => {
       ...newUser,
       password: hashedPassword,
     });
-    console.log(resp)
+    console.log(resp);
     return NextResponse.json(
       { message: 'User created successfully' },
       { status: 200 },

@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -17,18 +17,15 @@ const signUpPage = () => {
       method: 'POST',
       body: JSON.stringify(newUser),
       headers: {
-        "content-type": 'application/json'
-      }
-     
+        'content-type': 'application/json',
+      },
     });
 
-    console.log(resp)
+    console.log(resp);
 
-    if(resp.status ===  200 ){
+    if (resp.status === 200) {
       event.target.reset();
     }
-    
-
   };
   return (
     <div className="container px-24 mx-auto py-24">
@@ -45,7 +42,7 @@ const signUpPage = () => {
           <h6 className="text-3xl font-semibold text-primary text-center mb-12">
             Sign Up
           </h6>
-        <form onSubmit={handleSignUp} action="">
+          <form onSubmit={handleSignUp} action="">
             <label htmlFor="email">Name</label> <br />
             <input
               type="text"
@@ -71,7 +68,6 @@ const signUpPage = () => {
             />
             <br />
             <button
-              
               type="submit"
               className="w-full btn btn-primary mt-12 text-lg"
             >

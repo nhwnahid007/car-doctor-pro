@@ -1,8 +1,23 @@
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import { signIn } from 'next-auth/react';
+const LoginPage = () => {
+  const handleLogin = async (event) => {
+    event.preventDefault();
 
-const loginPage = () => {
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+
+    const resp = await signIn('credentials', {
+      email,
+      password,
+      redirect: false,
+    });
+
+    console.log(resp);
+  };
   return (
     <div className="container px-24 mx-auto py-24">
       <div className="grid grid-cols-2 gap-12 items-center">
@@ -18,7 +33,7 @@ const loginPage = () => {
           <h6 className="text-3xl font-semibold text-primary text-center mb-12">
             Sign In
           </h6>
-          <form action="">
+          <form onSubmit={handleLogin}>
             <label htmlFor="email">Email</label> <br />
             <input
               type="text"
@@ -58,4 +73,4 @@ const loginPage = () => {
   );
 };
 
-export default loginPage;
+export default LoginPage;
