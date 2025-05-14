@@ -3,7 +3,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { signIn } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 const LoginPage = () => {
+  const router = useRouter();
   const handleLogin = async (event) => {
     event.preventDefault();
 
@@ -17,6 +19,9 @@ const LoginPage = () => {
     });
 
     console.log(resp);
+    if(resp.status === 200){
+      router.push('/');
+    }
   };
   return (
     <div className="container px-24 mx-auto py-24">

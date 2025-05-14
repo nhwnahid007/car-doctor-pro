@@ -1,4 +1,5 @@
 'use client';
+import { signOut, useSession } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -7,6 +8,7 @@ import { AiOutlineShopping } from 'react-icons/ai';
 import { CiSearch } from 'react-icons/ci';
 
 const Navbar = () => {
+  const session = useSession();
   const links = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
@@ -15,7 +17,8 @@ const Navbar = () => {
     { name: 'Contact', href: '/contact' },
   ];
   const pathname = usePathname();
-  console.log(pathname);
+
+  console.log(session);
   return (
     <div>
       <div className="navbar container mx-auto">
@@ -78,9 +81,18 @@ const Navbar = () => {
           <button className="btn text-primary outline-primary outline-1 bg-transparent hover:bg-primary hover:text-white">
             Appoinment
           </button>
-          <button className="btn btn-primary text-white">
-            <Link href="/login">Login</Link>
-          </button>
+          {session.status === 'authenticated' ? (
+            <button
+              onClick={() => signOut()}
+              className="btn btn-primary text-white"
+            >
+              Logout
+            </button>
+          ) : (
+            <Link href="/login" className="btn btn-primary text-white">
+              Login
+            </Link>
+          )}
         </div>
       </div>
     </div>
