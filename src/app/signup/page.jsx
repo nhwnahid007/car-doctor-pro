@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import SocialSignin from '../../components/shared/SocialSignin';
 
 const signUpPage = () => {
   const handleSignUp = async (event) => {
@@ -76,7 +77,7 @@ const signUpPage = () => {
           </form>
           <div>
             <h6 className="my-12 text-center">or sign in with</h6>
-            {/* <SocialSignin /> */}
+            <SocialSignin />
             <h6 className="my-12 text-center">
               Already have account ?{' '}
               <Link className="text-primary font-semibold" href={'/login'}>

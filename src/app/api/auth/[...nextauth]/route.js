@@ -1,5 +1,7 @@
 import NextAuth from 'next-auth';
 import credentialsProvider from 'next-auth/providers/credentials';
+import googleProvider from 'next-auth/providers/google';
+import githubProvider from 'next-auth/providers/github';
 import bcrypt from 'bcrypt';
 import { connectDb } from '../../../../lib/connectDb';
 const handler = NextAuth({
@@ -29,6 +31,14 @@ const handler = NextAuth({
         }
         return currentUser;
       },
+    }),
+    googleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    }),
+    githubProvider({
+      clientId: process.env.GITHUB_CLIENT_ID,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET,
     }),
   ],
   callbacks: {},
