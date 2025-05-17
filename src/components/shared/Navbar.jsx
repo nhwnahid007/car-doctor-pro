@@ -8,7 +8,7 @@ import { AiOutlineShopping } from 'react-icons/ai';
 import { CiSearch } from 'react-icons/ci';
 
 const Navbar = () => {
-  const session = useSession();
+  const { data: session } = useSession();
   const links = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
@@ -81,13 +81,43 @@ const Navbar = () => {
           <button className="btn text-primary outline-primary outline-1 bg-transparent hover:bg-primary hover:text-white">
             Appoinment
           </button>
-          {session.status === 'authenticated' ? (
-            <button
-              onClick={() => signOut()}
-              className="btn btn-primary text-white"
-            >
-              Logout
-            </button>
+          {session?.user ? (
+            <div className="dropdown dropdown-end">
+              <div
+                tabIndex={0}
+                role="button"
+                className="btn btn-ghost btn-circle avatar"
+              >
+                <div className="w-10 rounded-full">
+                  <Image
+                    src={session.user.image || '/default-avatar.png'}
+                    alt={session.user.name || 'User'}
+                    width={40}
+                    height={40}
+                    className="rounded-full"
+                  />
+                </div>
+              </div>
+              <ul
+                tabIndex={0}
+                className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
+              >
+                <li>
+                  <Link href="/profile" className="justify-between">
+                    Profile
+                    <span className="badge">New</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/settings">Settings</Link>
+                </li>
+                <li>
+                  <button onClick={() => signOut()} className="text-error">
+                    Logout
+                  </button>
+                </li>
+              </ul>
+            </div>
           ) : (
             <Link href="/login" className="btn btn-primary text-white">
               Login
